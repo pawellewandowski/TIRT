@@ -20,7 +20,7 @@ class MultiplierService(SyncService):
 
 if __name__ == '__main__':
     # Uruchomienie usługi:
-    desc_file_name = 'address_extractor_service.xml'
+    desc_file_name = 'bayes_classifier_service.xml'
     s = ServiceController(MultiplierService, desc_file_name)
     s.start()
 
