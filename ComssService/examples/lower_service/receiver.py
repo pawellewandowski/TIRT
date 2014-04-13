@@ -4,7 +4,7 @@
 from ComssService.dev.control import DevServiceController
 import sys
 
-desc_file_name = 'lower_service.xml'
+desc_file_name = 'servers_emulator.xml'
 controller = DevServiceController(desc_file_name)
 try:
     while True:
