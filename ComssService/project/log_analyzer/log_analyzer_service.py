@@ -5,7 +5,7 @@ from ComssService.service.sync import SyncService
 from ComssService.ServiceController import ServiceController
 import re
 
-class LowerService(SyncService):
+class LogAnalyzerService(SyncService):
 
     def run(self):
         while True:
@@ -24,6 +24,6 @@ class LowerService(SyncService):
 if __name__ == '__main__':
     # Uruchomienie usługi:
     desc_file_name = 'log_analyzer_service.xml'
-    s = ServiceController(LowerService, desc_file_name)
+    s = ServiceController(LogAnalyzerService, desc_file_name)
     s.start()
 
