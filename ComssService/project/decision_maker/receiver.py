@@ -3,7 +3,7 @@
 
 from ComssService.dev.control import DevServiceController
 
-desc_file_name = 'bayes_classifier_service.xml'
+desc_file_name = 'address_extractor_service.xml'
 
 controller = DevServiceController(desc_file_name)
 try:

@@ -6,7 +6,7 @@
   		<id>1</id>
   		<formats>
   			<format>
-  				<name>http_code</name>
+  				<name>bayes</name>
   				<latency>5</latency>
   			</format>
   		</formats>
@@ -15,7 +15,16 @@
   		<id>2</id>
   		<formats>
   			<format>
-  				<name>content_length</name>
+  				<name>sqlinjection</name>
+  				<latency>5</latency>
+  			</format>
+  		</formats>
+  	</input>
+  	<input>
+  		<id>3</id>
+  		<formats>
+  			<format>
+  				<name>spam</name>
   				<latency>5</latency>
   			</format>
   		</formats>
@@ -25,7 +34,7 @@
   		<id>1</id>
   		<formats>
   			<format>
-  				<name>bayes_probability</name>
+  				<name>output</name>
   				<latency>5</latency>
   			</format>
   		</formats>
@@ -39,5 +48,7 @@
     <class>value_multiplier</class>
   </classes>
   <parameters>
+    <param>value_to_multiply</param>
+    <param>multiply_by</param>
   </parameters>
 </tns:service>
