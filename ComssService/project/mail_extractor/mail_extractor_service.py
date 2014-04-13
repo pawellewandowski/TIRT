@@ -14,7 +14,6 @@ class MailExtractorService(SyncService):
 
 
 if __name__ == '__main__':
-    # Uruchomienie usługi:
     desc_file_name = 'mail_extractor_service.xml'
     s = ServiceController(MailExtractorService, desc_file_name)
     s.start()
