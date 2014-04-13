@@ -5,14 +5,14 @@ from ComssService.service.sync import SyncService
 from ComssService.ServiceController import ServiceController
 import re
 
-regex = '([(\d\.)]+) - - \[(.*?)\] "([A-Z]*?) (.*?)" (\d+) (\d+) "(.*?)" "(.*?)"'
+regex = '([(\d\.)]+) - - \[(.*?)\] "([A-Z]*?) (.*?) (.*?)" (\d+) (\d+|-) "(.*?)" "(.*?)"'
 
 class HttpExtractorService(SyncService):
 
     def run(self):
         while True:
             data = self.read('1')
-            byte = re.match(regex, data).groups()[4]
+            byte = re.match(regex, data).groups()[5]
             self.send('2', byte)
 
 if __name__ == '__main__':

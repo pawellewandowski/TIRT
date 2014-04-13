@@ -5,13 +5,14 @@ from ComssService.service.sync import SyncService
 from ComssService.ServiceController import ServiceController
 import re
 
-regex = '([(\d\.)]+) - - \[(.*?)\] "([A-Z]*?) (.*?) (.*?)" (\d+) (\d+) "(.*?)" "(.*?)"'
+regex = '([(\d\.)]+) - - \[(.*?)\] "([A-Z]*?) (.*?) (.*?)" (\d+) (\d+|-) "(.*?)" "(.*?)"'
 
 class AddressExtractorService(SyncService):
 
     def run(self):
         while True:
             data = self.read('1')
+            print data
             byte = re.match(regex, data).groups()[3]
             self.send('2', byte)
 
