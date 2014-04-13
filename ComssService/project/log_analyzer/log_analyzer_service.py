@@ -6,8 +6,8 @@ from ComssService.ServiceController import ServiceController
 import re
 
 class LogAnalyzerService(SyncService):
-
     def run(self):
+        print("##### Log Analzyer Service #####")
         while True:
             data = self.read('1')
             http_server = re.search('HEAD|GET|POST',data)
