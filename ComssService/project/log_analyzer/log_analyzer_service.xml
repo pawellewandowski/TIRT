@@ -25,7 +25,7 @@
           <id>3</id>
           <formats>
               <format>
-                  <name>smtp_log</name>
+                  <name>http_log</name>
                   <latency>5</latency>
               </format>
           </formats>
@@ -34,11 +34,20 @@
           <id>4</id>
           <formats>
               <format>
-                  <name>ftp_log</name>
+                  <name>http_log</name>
                   <latency>5</latency>
               </format>
           </formats>
     </output>
+      <output>
+          <id>5</id>
+          <formats>
+              <format>
+                  <name>smtp_log</name>
+                  <latency>5</latency>
+              </format>
+          </formats>
+      </output>
   </outputs>
   <cost>2.0</cost>
   <latency>1.5</latency>

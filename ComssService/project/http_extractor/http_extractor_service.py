@@ -8,7 +8,7 @@ import re
 regex = '([(\d\.)]+) - - \[(.*?)\] "([A-Z]*?) (.*?) (.*?)" (\d+) (\d+|-) "(.*?)" "(.*?)"'
 
 class HttpExtractorService(SyncService):
-
+    print("##### Http Extrator Service #####")
     def run(self):
         while True:
             data = self.read('1')

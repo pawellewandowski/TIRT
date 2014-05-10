@@ -6,7 +6,7 @@ from ComssService.ServiceController import ServiceController
 import re
 
 class MailExtractorService(SyncService):
-
+    print("##### Mail Extractor Service #####")
     def run(self):
         while True:
             data = self.read('1')

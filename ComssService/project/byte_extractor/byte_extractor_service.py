@@ -10,6 +10,7 @@ regex = '([(\d\.)]+) - - \[(.*?)\] "([A-Z]*?) (.*?) (.*?)" (\d+) (\d+|-) "(.*?)"
 class ByteExtractorService(SyncService):
 
     def run(self):
+        print("##### Byte Extrator Service #####")
         while True:
             data = self.read('1')
             byte = re.match(regex, data).groups()[6]

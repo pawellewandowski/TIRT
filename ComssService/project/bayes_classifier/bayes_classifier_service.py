@@ -19,6 +19,7 @@ class MultiplierService(SyncService):
         self.queue = [0, 0, 0, 0, 0, 0]
 
     def run(self):
+        print("##### Bayes Classifier Service #####")
         while True:  # będzie się wykonywać tak długo, jak będzie działać usługa
             if self.last_code is None:
                 self.last_code = self.read_object('1')  # odczytaj wejsciowy slownik

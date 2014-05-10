@@ -5,7 +5,7 @@ from ComssService.service.sync import SyncService
 from ComssService.ServiceController import ServiceController
 
 class MultiplierService(SyncService):
-
+    print("##### Mail classifier service #####")
     def run(self):
         while True:  # będzie się wykonywać tak długo, jak będzie działać usługa
             received_dict = self.read_object('1')  # odczytaj wejsciowy slownik

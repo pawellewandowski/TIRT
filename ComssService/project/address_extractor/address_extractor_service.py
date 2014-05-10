@@ -8,11 +8,11 @@ import re
 regex = '([(\d\.)]+) - - \[(.*?)\] "([A-Z]*?) (.*?) (.*?)" (\d+) (\d+|-) "(.*?)" "(.*?)"'
 
 class AddressExtractorService(SyncService):
-
+    print("##### Adress Extractor Service #####")
     def run(self):
         while True:
             data = self.read('1')
-            print data
+            #print data
             byte = re.match(regex, data).groups()[3]
             self.send('2', byte)
 

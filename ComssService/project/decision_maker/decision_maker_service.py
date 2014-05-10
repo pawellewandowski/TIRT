@@ -3,26 +3,28 @@
 
 from ComssService.service.sync import SyncService
 from ComssService.ServiceController import ServiceController
-from numpy import matrix
-from numpy.linalg import *
+
 
 class MultiplierService(SyncService):
 
     def run(self):
+        print("##### Decision Maker Service #####")
         while True:  # będzie się wykonywać tak długo, jak będzie działać usługa
-            bayes = self.read_object('1')
-            sqlinjection = self.read_object('2')
-            spam = self.read_object('3')
-
+            bayes = self.read('1')
+            sqlinjection = self.read('2')
+            spam = self.read('3')
+            print sqlinjection
+            print bayes
+            print spam
             if bayes is not None:
                 if(bayes>0.5):
-                    self.send_object('1',"ANOMALY DETECTED!")
+                    self.send('4',"ANOMALY DETECTED!")
             if sqlinjection is not None:
                 if(sqlinjection == 1):
-                    self.send_object('1',"SQLINJECTION DETECTED!")
+                    self.send('4',"SQLINJECTION DETECTED!")
             if spam is not None:
                 if(spam == 1):
-                    self.send_object('1',"SPAM DETECTED!")
+                    self.send('4',"SPAM DETECTED!")
 #             print 'GOT:', received_dict
 #             curr_params = self.get_parameters()
 #             value_to_multiply = curr_params['value_to_multiply']

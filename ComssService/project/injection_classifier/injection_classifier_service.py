@@ -10,7 +10,7 @@ json_data = open('default_filter.json')
 filters = json.load(json_data)['filters']['filter']
 
 class InjectionClassifierService(SyncService):
-
+    print("##### Injection classifier service #####")
     def run(self):
         while True:
             data = self.read('1')
