@@ -3,25 +3,27 @@
 
 from ComssService.service.sync import SyncService
 from ComssService.ServiceController import ServiceController
+import mmap
+
 
 class MultiplierService(SyncService):
     print("##### Mail classifier service #####")
+
     def run(self):
-        while True:  # będzie się wykonywać tak długo, jak będzie działać usługa
-            received_dict = self.read_object('1')  # odczytaj wejsciowy slownik
-#             print 'GOT:', received_dict
-            curr_params = self.get_parameters()
-            value_to_multiply = curr_params['value_to_multiply']
-            if value_to_multiply in received_dict:
-                received_dict[value_to_multiply] *= curr_params['multiply_by']
+        while True:
+            received_dict = self.read('1')
+            status = '0'
+            with open("data/blacklist.txt", "r") as f:
+                searchlines = f.readlines()
+                for i, line in enumerate(searchlines):
+                    if str(received_dict) in line:
+                        status = '1'
 
+            self.send('2', status)
 
-            self.send_object('2', received_dict)  # na wyjście o id '2' wyślij przetworzony slownik
 
 if __name__ == '__main__':
-    # Uruchomienie usługi:
-    desc_file_name = 'address_extractor_service.xml'
+    desc_file_name = 'mail_classifier_service.xml'
     s = ServiceController(MultiplierService, desc_file_name)
     s.start()
 
-    # teraz wystarczy w kosoli uruchomić ten skrypt, aby usługa zaczęła działać

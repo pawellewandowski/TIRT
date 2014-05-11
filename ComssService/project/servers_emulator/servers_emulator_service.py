@@ -12,6 +12,8 @@ class ServersEmulatorService(SyncService):
         while True:
             data = self.read('1')
             self.send('3', data)
+            data = self.read('2')
+            self.send('3', data)
 
 
 

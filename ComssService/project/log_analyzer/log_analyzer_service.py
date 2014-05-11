@@ -18,8 +18,7 @@ class LogAnalyzerService(SyncService):
                 self.send('3', data) #127.0.0.1:5570 - byte_extractor
                 self.send('4', data) #127.0.0.1:5580 - address_extractor
             else:
-                if smtp_server:
-                    self.send('5', data) #127.0.0.1:5590 - mail_extractor
+                self.send('5', data) #127.0.0.1:5590 - mail_extractor
 
 
 if __name__ == '__main__':

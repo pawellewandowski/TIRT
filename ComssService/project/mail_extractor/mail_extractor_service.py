@@ -10,7 +10,13 @@ class MailExtractorService(SyncService):
     def run(self):
         while True:
             data = self.read('1')
-            print(data)
+            if data is not None:
+                email = re.search("([a-zA-Z][\w\.-]*[a-zA-Z0-9])@([a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z])", data)
+                if email is not None:
+                    domain=email.group(2)
+                    if domain:
+                        print(domain)
+                        self.send('2', domain)
 
 
 if __name__ == '__main__':
