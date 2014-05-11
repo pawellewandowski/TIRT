@@ -3,7 +3,7 @@
 
 from ComssService.dev.control import DevServiceController
 
-desc_file_name = 'decision_maker_service.xml'
+desc_file_name = 'decision_maker_service1.xml'
 
 controller = DevServiceController(desc_file_name)
 try:

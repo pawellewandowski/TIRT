@@ -6,32 +6,15 @@
   		<id>1</id>
   		<formats>
   			<format>
-  				<name>bayes</name>
-  				<latency>5</latency>
-  			</format>
-  		</formats>
-  	</input>
-  	<input>
-  		<id>2</id>
-  		<formats>
-  			<format>
-  				<name>sqlinjection</name>
-  				<latency>5</latency>
-  			</format>
-  		</formats>
-  	</input>
-  	<input>
-  		<id>3</id>
-  		<formats>
-  			<format>
   				<name>spam</name>
   				<latency>5</latency>
   			</format>
   		</formats>
-  	</input></inputs>
+  	</input>
+  </inputs>
   <outputs>
   	<output>
-  		<id>4</id>
+  		<id>1</id>
   		<formats>
   			<format>
   				<name>output</name>

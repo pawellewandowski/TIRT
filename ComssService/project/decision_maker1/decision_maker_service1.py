@@ -11,20 +11,10 @@ class MultiplierService(SyncService):
         print("##### Decision Maker Service #####")
         while True:  # będzie się wykonywać tak długo, jak będzie działać usługa
             bayes = self.read('1')
-            sqlinjection = self.read('2')
-            spam = self.read('3')
-            print sqlinjection
             print bayes
-            print spam
             if bayes is not None:
                 if(bayes>0.5):
-                    self.send('4',"ANOMALY DETECTED!")
-            if sqlinjection is not None:
-                if(sqlinjection == 1):
-                    self.send('4',"SQLINJECTION DETECTED!")
-            if spam is not None:
-                if(spam == 1):
-                    self.send('4',"SPAM DETECTED!")
+                    self.send('1', "ANOMALY DETECTED!")
 #             print 'GOT:', received_dict
 #             curr_params = self.get_parameters()
 #             value_to_multiply = curr_params['value_to_multiply']
@@ -33,7 +23,7 @@ class MultiplierService(SyncService):
 
 if __name__ == '__main__':
     # Uruchomienie usługi:
-    desc_file_name = 'decision_maker_service.xml'
+    desc_file_name = 'decision_maker_service1.xml'
     s = ServiceController(MultiplierService, desc_file_name)
     s.start()
 
