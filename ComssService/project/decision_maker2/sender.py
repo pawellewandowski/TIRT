@@ -5,7 +5,7 @@ from ComssService.dev.control import DevServiceController
 import random
 import time
 
-desc_file_name = 'address_extractor_service.xml'
+desc_file_name = 'decision_maker_service2.xml'
 controller = DevServiceController(desc_file_name)
 
 UPDATE_PARAMS_INTERVAL = 20
