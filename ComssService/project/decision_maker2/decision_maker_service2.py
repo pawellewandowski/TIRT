@@ -14,7 +14,7 @@ class MultiplierService(SyncService):
 
             if sqlinjection is not None:
                 if(sqlinjection == 1):
-                    self.send_object('1', "SQLINJECTION DETECTED!")
+                    self.send('1', "SQLINJECTION DETECTED!")
 #             print 'GOT:', received_dict
 #             curr_params = self.get_parameters()
 #             value_to_multiply = curr_params['value_to_multiply']

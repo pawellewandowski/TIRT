@@ -10,7 +10,7 @@ class MultiplierService(SyncService):
 
     def run(self):
         while True:  # będzie się wykonywać tak długo, jak będzie działać usługa
-            spam = self.read_object('1')
+            spam = self.read('1')
             if spam is not None:
                 if(spam == 1):
                     self.send_object('1', "SPAM DETECTED!")
