@@ -3,12 +3,12 @@
 
 from ComssService.dev.control import DevServiceController
 
-desc_file_name = 'address_extractor_service.xml'
+desc_file_name = 'mail_classifier_service.xml'
 
 controller = DevServiceController(desc_file_name)
 try:
     while True:
-        print controller.read_object('2')
+        print controller.read_data('2')
 except:
     pass
 finally:

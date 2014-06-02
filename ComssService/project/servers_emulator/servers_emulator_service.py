@@ -16,6 +16,7 @@ class ServersEmulatorService(SyncService):
             self.send('3', data)
 
 
+
 if __name__ == '__main__':
     # Uruchomienie usługi:
     desc_file_name = 'servers_emulator.xml'

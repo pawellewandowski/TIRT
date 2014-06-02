@@ -9,7 +9,7 @@ controller = DevServiceController(desc_file_name)
 try:
     print("##### SMTP RECEIVER #####")
     while True:
-        print controller.read_data('3')
+        print controller.read_data('5')
 except:
     raise
 finally:

@@ -7,18 +7,18 @@ import re
 
 class LogAnalyzerService(SyncService):
     def run(self):
-        print("##### Log Analzyer Service #####")
+        print("##### Log Analyzer Service #####")
         while True:
             data = self.read('1')
+            #print(data)
             http_server = re.search('HEAD|GET|POST',data)
             smtp_server = re.search('\[\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}]',data)
             if http_server:
-                self.send('2', data)
+                self.send('2', data) #127.0.0.1:5560 - http_extractor
+                self.send('3', data) #127.0.0.1:5570 - byte_extractor
+                self.send('4', data) #127.0.0.1:5580 - address_extractor
             else:
-                if smtp_server:
-                    self.send('3', data)
-                else:
-                    self.send('4', data)
+                self.send('5', data) #127.0.0.1:5590 - mail_extractor
 
 
 if __name__ == '__main__':
