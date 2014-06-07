@@ -9,12 +9,13 @@ from numpy.linalg import *
 class MultiplierService(SyncService):
 
     def run(self):
+        print("##### Decision Maker Service 2 #####")
         while True:  # będzie się wykonywać tak długo, jak będzie działać usługa
-            sqlinjection = self.read_object('1')
-
+            sqlinjection = self.read('1')
+            print sqlinjection
             if sqlinjection is not None:
-                if(sqlinjection == 1):
-                    self.send('1', "SQLINJECTION DETECTED!")
+                if(int(sqlinjection) == 1):
+                    self.send('2', "SQLINJECTION DETECTED!")
 #             print 'GOT:', received_dict
 #             curr_params = self.get_parameters()
 #             value_to_multiply = curr_params['value_to_multiply']

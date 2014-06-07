@@ -9,11 +9,13 @@ from numpy.linalg import *
 class MultiplierService(SyncService):
 
     def run(self):
+        print("##### Decision Maker Service 3 #####")
         while True:  # będzie się wykonywać tak długo, jak będzie działać usługa
             spam = self.read('1')
+            print spam
             if spam is not None:
-                if(spam == 1):
-                    self.send_object('1', "SPAM DETECTED!")
+                if(int(spam) == "1"):
+                    self.send('2', "SPAM DETECTED!")
 #             print 'GOT:', received_dict
 #             curr_params = self.get_parameters()
 #             value_to_multiply = curr_params['value_to_multiply']

@@ -8,13 +8,13 @@ from ComssService.ServiceController import ServiceController
 class MultiplierService(SyncService):
 
     def run(self):
-        print("##### Decision Maker Service #####")
+        print("##### Decision Maker Service 1 #####")
         while True:  # będzie się wykonywać tak długo, jak będzie działać usługa
             bayes = self.read('1')
             print bayes
             if bayes is not None:
-                if(bayes>0.5):
-                    self.send('1', "ANOMALY DETECTED!")
+                if(float(bayes)>0.5):
+                    self.send('2', "ANOMALY DETECTED!")
 #             print 'GOT:', received_dict
 #             curr_params = self.get_parameters()
 #             value_to_multiply = curr_params['value_to_multiply']
