@@ -14,6 +14,7 @@ class ByteExtractorService(SyncService):
         while True:
             data = self.read('1')
             byte = re.match(regex, data).groups()[6]
+            print byte
             # bytes == "-" when for e.g. 301
             if byte == '-':
                 byte='0'

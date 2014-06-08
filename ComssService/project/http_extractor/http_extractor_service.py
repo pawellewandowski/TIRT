@@ -13,6 +13,7 @@ class HttpExtractorService(SyncService):
         while True:
             data = self.read('1')
             byte = re.match(regex, data).groups()[5]
+            print byte
             self.send('2', byte)
 
 if __name__ == '__main__':

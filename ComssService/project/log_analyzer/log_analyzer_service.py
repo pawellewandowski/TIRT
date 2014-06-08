@@ -14,10 +14,12 @@ class LogAnalyzerService(SyncService):
             http_server = re.search('HEAD|GET|POST',data)
             smtp_server = re.search('\[\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}]',data)
             if http_server:
+                print 'http'
                 self.send('2', data) #127.0.0.1:5560 - http_extractor
                 self.send('3', data) #127.0.0.1:5570 - byte_extractor
                 self.send('4', data) #127.0.0.1:5580 - address_extractor
             else:
+                print 'smtp'
                 self.send('5', data) #127.0.0.1:5590 - mail_extractor
 
 

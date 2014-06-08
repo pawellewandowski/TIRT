@@ -22,7 +22,7 @@ class InjectionClassifierService(SyncService):
                     print data,line['description']
                     status = '1'
                     break
-            
+            print status
             self.send('2', status)
             
             

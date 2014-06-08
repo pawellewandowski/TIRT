@@ -18,7 +18,7 @@ class MultiplierService(SyncService):
                 for i, line in enumerate(searchlines):
                     if str(received_dict) in line:
                         status = '1'
-
+            print status            
             self.send('2', status)
 
 

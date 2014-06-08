@@ -22,7 +22,7 @@
   	</input></inputs>
   <outputs>
   	<output>
-  		<id>1</id>
+  		<id>3</id>
   		<formats>
   			<format>
   				<name>bayes_probability</name>
