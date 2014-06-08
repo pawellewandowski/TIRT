@@ -5,6 +5,10 @@ from ComssService.service.sync import SyncService
 from ComssService.ServiceController import ServiceController
 import re
 
+# Usługa łacząca dwa strumienie danych w jeden
+# Dane pochodzą z plików znajdujących się w katalogu data
+
+
 class ServersEmulatorService(SyncService):
 
     def run(self):
