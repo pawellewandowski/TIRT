@@ -11,15 +11,12 @@ class MultiplierService(SyncService):
     def run(self):
 		print("##### Decision Maker Service 2 #####")
 		while True:
+			#pobierz odczyt ataku
 			sqlinjection = self.read('1')
 			print sqlinjection
+			# jeśli wystąpił atak, powiadom dalej
 			if(sqlinjection == 1):
 				self.send('2', "SQLINJECTION DETECTED!")
-			#             print 'GOT:', received_dict
-			#             curr_params = self.get_parameters()
-			#             value_to_multiply = curr_params['value_to_multiply']
-			#             if value_to_multiply in received_dict:
-			#                 received_dict[value_to_multiply] *= curr_params['multiply_by']
 
 if __name__ == '__main__':
     # Uruchomienie usługi:

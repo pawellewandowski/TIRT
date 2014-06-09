@@ -11,15 +11,12 @@ class MultiplierService(SyncService):
     def run(self):
 		print("##### Decision Maker Service 3 #####")
 		while True:
+			#pobierz odczyt spamu
 			spam = self.read('1')
 			print spam
+			#jeśli wystąpił spam, powiadom dalej
 			if(spam == 1):
 				self.send('2', "SPAM DETECTED!")
-		#             print 'GOT:', received_dict
-		#             curr_params = self.get_parameters()
-		#             value_to_multiply = curr_params['value_to_multiply']
-		#             if value_to_multiply in received_dict:
-		#                 received_dict[value_to_multiply] *= curr_params['multiply_by']
 
 if __name__ == '__main__':
     # Uruchomienie usługi:

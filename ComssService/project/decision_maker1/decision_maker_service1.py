@@ -10,16 +10,14 @@ class MultiplierService(SyncService):
     def run(self):
 		print("##### Decision Maker Service 1 #####")
 		while True:  # będzie się wykonywać tak długo, jak będzie działać usługa
+			#pobierz prawdopodobieństwo
 			bayes = float(self.read('1'))/100
 			print str(bayes)
+			#sprawdzamy jaka jest szansa na anomalie
 			if(bayes>0.5):
 				pass
+				#trzeba najpierw jakieś wyjście dopisać
 				# self.send('2', "ANOMALY DETECTED!")
-	#             print 'GOT:', received_dict
-	#             curr_params = self.get_parameters()
-	#             value_to_multiply = curr_params['value_to_multiply']
-	#             if value_to_multiply in received_dict:
-	#                 received_dict[value_to_multiply] *= curr_params['multiply_by']
 
 if __name__ == '__main__':
 	# Uruchomienie usługi:
